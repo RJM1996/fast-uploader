@@ -1,0 +1,5 @@
+/client/node_modules
+/server/node_modules
+/server/public/download/*
+/server/public/upload/*
+.DS_Store
