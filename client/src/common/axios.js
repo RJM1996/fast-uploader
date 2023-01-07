@@ -12,7 +12,7 @@ class HttpRequest {
     this.queue = {}
   }
 
-  getInsideConfig() {
+  getInsideConfig () {
     const config = {
       baseURL: this.baseUrl,
       method: 'post',
@@ -23,11 +23,11 @@ class HttpRequest {
     return config
   }
 
-  destroy(url) {
+  destroy (url) {
     delete this.queue[url]
   }
 
-  interceptors(instance, url) {
+  interceptors (instance, url) {
     // 请求拦截
     instance.interceptors.request.use(
       (config) => {
@@ -67,7 +67,7 @@ class HttpRequest {
     )
   }
 
-  request(options) {
+  request (options) {
     const instance = axios.create()
     let { data, method } = options
     if (options.headers) {
@@ -134,3 +134,8 @@ export const createAction = (req, apiOptions, action, apiType) => {
 }
 
 export default createApi
+
+export const request = axios.create({
+  baseURL: 'http://localhost:3000/upload',
+  timeout: 60000,
+})

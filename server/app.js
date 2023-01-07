@@ -88,7 +88,7 @@ router.post(
       await next()
       const urls = ctx.files.file.map((file) => `${RESOURCE_URL}/${file.originalname}`)
       ctx.body = {
-        code: 1,
+        code: 200,
         msg: '文件上传成功',
         urls,
       }
@@ -114,7 +114,7 @@ router.post(
       console.log('file2: ', ctx.files)
       const urls = ctx.files.file.map((file) => `${RESOURCE_URL}/${file.originalname.replace(/@/g, path.sep)}`)
       ctx.body = {
-        code: 1,
+        code: 200,
         msg: '文件上传成功',
         urls,
       }
@@ -139,7 +139,7 @@ router.post(
       await next()
       console.log('file3: ', ctx.files)
       ctx.body = {
-        code: 1,
+        code: 200,
         msg: '文件上传成功',
         url: `${RESOURCE_URL}/${ctx.files.file[0].originalname}`,
       }

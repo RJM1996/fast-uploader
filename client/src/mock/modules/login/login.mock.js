@@ -68,21 +68,21 @@ export const getUserInfoAPI = {
           icon: 'CloudOutlined',
           path: '/uploadAndDownload'
         },
-        {
-          title: '权限管理',
-          key: 'permissionManage',
-          icon: 'CloudOutlined',
-          children: [
-            {
-              title: '用户管理',
-              path: '/userManage'
-            },
-            {
-              title: '角色管理',
-              path: '/roleManage'
-            }
-          ]
-        }
+        // {
+        //   title: '权限管理',
+        //   key: 'permissionManage',
+        //   icon: 'CloudOutlined',
+        //   children: [
+        //     {
+        //       title: '用户管理',
+        //       path: '/userManage'
+        //     },
+        //     {
+        //       title: '角色管理',
+        //       path: '/roleManage'
+        //     }
+        //   ]
+        // }
       ]
     }
     return {

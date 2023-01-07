@@ -1,4 +1,4 @@
-import { Modal } from 'antd'
+import { message, Modal } from 'antd'
 import axios from 'axios'
 
 const request = axios.create({
@@ -8,7 +8,7 @@ const request = axios.create({
 })
 
 // 创建 a 标签进行下载
-function createAtagDownload(fileName, data) {
+function createAtagDownload (fileName, data) {
   let blob = new Blob([data])
   let elink = document.createElement('a')
   elink.download = fileName
@@ -20,7 +20,8 @@ function createAtagDownload(fileName, data) {
   document.body.removeChild(elink)
 }
 
-export default function aTagDownload(url = '/download') {
+export default function aTagDownload (url = '/download') {
+  message.loading('开始下载...', 0)
   request
     .get(url)
     .then((result) => {
@@ -42,6 +43,7 @@ export default function aTagDownload(url = '/download') {
         let fileName = headers['content-disposition']
         fileName = decodeURI(fileName)
         createAtagDownload(fileName, data)
+        message.destroy()
       }
     })
     .catch((err) => {
