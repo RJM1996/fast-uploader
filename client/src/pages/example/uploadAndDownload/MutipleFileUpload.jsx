@@ -20,7 +20,7 @@ const MutipleFileUpload = () => {
       })
       .then((result) => {
         console.log(result.data)
-        const { code, msg, urls } = result.data
+        const { code, urls } = result.data
         if (code === 200) {
           Modal.success({
             content: (

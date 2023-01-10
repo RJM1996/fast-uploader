@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import BigFileUpload from './BigFileUpload'
 import { Button } from 'antd'
 import download from '@/common/download.js'
+import BigFileUpload from './BigFileUpload'
 import SingleFileUpload from './SingleFileUpload'
 import MutipleFileUpload from './MutipleFileUpload'
 import DirFileUpload from './DirFileUpload'
 import DirZipUpload from './DirZipUpload'
+import BigFileDownload from './BigFileDownload'
 
 class UploadAndDownload extends Component {
   constructor(props) {
@@ -58,6 +59,9 @@ class UploadAndDownload extends Component {
         </div>
         <div className='g-content'>
           <DirZipUpload />
+        </div>
+        <div className='g-content'>
+          <BigFileDownload />
         </div>
       </div>
     )

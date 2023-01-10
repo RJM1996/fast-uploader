@@ -13,7 +13,7 @@ const request = axios.create({
 
 // 大文件上传
 class BigFileUpload extends Component {
-  chunkSize = 2 * 1024 // 分片大小 2kb
+  chunkSize = 5 * 1024 * 1024 // 分片大小
   fileChunks = [] // 文件分片列表
   alreadySendCount = 0 // 已上传分片个数
   md5Percent = 0 // 生成MD5的进度
